@@ -26,6 +26,7 @@ job [[ template "job_name" . ]] {
     network {
       port "http" {
         to = 8086
+        static = 8086
       }
     }
 
