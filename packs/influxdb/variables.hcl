@@ -105,6 +105,17 @@ variable "config_volume_type" {
   default     = "host"
 }
 
+variable "sslcerts_volume_name" {
+  description = "The name of the dedicated sslcerts volume you want InfluxDB to use."
+  type        = string
+}
+
+variable "sslcerts_volume_type" {
+  description = "The type of the dedicated sslcerts volume you want InfluxDB to use."
+  type        = string
+  default     = "host"
+}
+
 variable "docker_influxdb_env_vars" {
   type        = map(string)
   description = "Environment variables to pass to Docker container."

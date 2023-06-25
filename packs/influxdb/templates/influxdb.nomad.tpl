@@ -64,6 +64,14 @@ job [[ template "job_name" . ]] {
     }
     [[- end]]
 
+    [[- if .influxdb.sslcerts_volume_name ]]
+    volume "[[.influxdb.sslcerts_volume_name]]" {
+      type      = "[[.influxdb.sslcerts_volume_type]]"
+      read_only = true
+      source    = "[[.influxdb.sslcerts_volume_name]]"
+    }
+    [[- end]]
+
     restart {
       attempts = 2
       interval = "30m"
